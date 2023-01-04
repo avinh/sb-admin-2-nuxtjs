@@ -22,7 +22,9 @@
     "bootstrap": "^4.6.2",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.25.3",
+    "jquery": "^3.6.3",
     "nuxt": "^2.15.8",
+    "popper.js": "^1.16.1",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
