@@ -4,7 +4,9 @@
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <TopBar />
-        <Nuxt />
+        <div class="container-fluid">
+          <Nuxt />
+        </div>
       </div>
       <TheFooter />
     </div>

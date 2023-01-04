@@ -26,7 +26,7 @@
                 <li class="nav-item dropdown no-arrow">
                     <b-dropdown class="nav-link dropdown-toggle" no-caret>
                         <template #button-content>
-                            <span class="mr-2 d-lg-inline small">Admin</span>
+                            <span class="mr-2 d-lg-inline small">{{loggedInUser.username}}</span>
                             <img class="img-profile rounded-circle" src="/img/undraw_profile.svg" />
                         </template>
                         <b-dropdown-item>
