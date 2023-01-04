@@ -2,9 +2,9 @@
     <div class="d-flex align-items-center justify-content-center vh-100 bg-white w-100">
         <div class="text-center row">
             <div class=" col-md-12 mt-5">
-                <p class="fs-3"> <span class="text-danger">Opps!</span> Page not found.</p>
+                <div class="error mx-auto" data-text="500">500</div>
                 <p class="lead">
-                    The page you’re looking for doesn’t exist.
+                    Opps! Internal Server Error!
                 </p>
                 <a href="/" class="btn btn-primary">Go Home</a>
             </div>
