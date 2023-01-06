@@ -57,71 +57,13 @@
 import { mapState, mapMutations } from 'vuex';
 
 import BDivider from '~/components/BDivider.vue';
+import { sidebarConfig } from '~/configs/sidebar';
 
 export default {
     name: "SideBar",
     data() {
         return {
-            menuList: [
-                {
-                    id: "dashboard",
-                    name: "Dashboard",
-                    link: "/",
-                    icon: "fas fa-fw fa-tachometer-alt"
-                },
-                {
-                    id: "divider"
-                },
-                {
-                    id: "components",
-                    name: "Components",
-                    icon: "fas fa-fw fa-cog",
-                    sub: [
-                        {
-                            name: "CUSTOM COMPONENTS:",
-                            items: [
-                                {
-                                    id: "buttons",
-                                    name: "Buttons",
-                                    link: "/buttons"
-                                },
-                                {
-                                    id: "cards",
-                                    name: "Cards",
-                                    link: "/cards"
-                                },
-                                {
-                                    id: "table",
-                                    name: "Table",
-                                    link: "/table"
-                                },
-                            ]
-                        }
-                    ]
-                },
-                {
-                    id: "pages",
-                    name: "Pages",
-                    icon: "fas fa-fw fa-folder",
-                    sub: [
-                        {
-                            name: "OTHER PAGES:",
-                            items: [
-                                {
-                                    id: "404",
-                                    name: "404",
-                                    link: "/404"
-                                },
-                                {
-                                    id: "404-nolayout",
-                                    name: "404 No Layout",
-                                    link: "/404-nolayout"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
+            menuList: sidebarConfig,
         };
     },
     computed: {
@@ -145,7 +87,7 @@ export default {
             this.setSidebarToggleTop();
         },
         isRouteActive(menuItem) {
-            if (menuItem.link === this.$route.path) {
+            if (menuItem.link === this.$route.fullPath) {
                 return true;
             }
             if (menuItem.sub) {
