@@ -14,7 +14,8 @@
                         </b-col>
                     </b-row>
 
-                    <b-table :items="items" responsive v-bind="$props" class="mt-2">
+                    <b-table :items="items" responsive v-bind="$props" class="mt-2" selectable :select-mode="'single'"
+                        @row-selected="onRowSelected">
                         <template #table-busy>
                             <div class="text-center text-danger my-2">
                                 <b-spinner class="align-middle"></b-spinner>
@@ -29,8 +30,8 @@
                         </b-col>
                     </b-row>
                 </div>
-                <div v-if="target === 'create'">
-                    <ResourceAdminCreate :fields="create" :source="source"
+                <div v-if="target !== 'index'">
+                    <ResourceAdminForm :fields="create" :source="source" :target="target"
                         :onTarget="(target) => { this.target = target }" />
                 </div>
             </b-card-body>
@@ -74,12 +75,20 @@ export default {
         onCreate() {
             this.$router.push({ path: this.$route.path + "#create" });
             this.target = 'create';
-        }
+        },
+        onRowSelected(items) {
+            this.$router.push({ path: this.$route.path + "#" + items[0].id })
+            this.target = 'edit';
+        },
     },
     mounted() {
         if (this.$route.fullPath.includes('#create')) {
             this.target = 'create';
-        } else {
+        }
+        else if (this.$route.fullPath.includes('#')) {
+            this.target = 'edit';
+        }
+        else {
             this.target = 'index';
         }
         this.getData();
