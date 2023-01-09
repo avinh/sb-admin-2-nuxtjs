@@ -21,57 +21,57 @@
                             <code>.btn-circle</code>
                         </div>
                         <b-button variant="primary" class="btn-circle">
-                            <font-awesome-icon :icon="`fa-angle-left`"/>
+                            <font-awesome-icon :icon="`fa-angle-left`" />
                         </b-button>
                         <b-button variant="success" class="btn-circle">
-                            <font-awesome-icon :icon="`fas fa-check`"/>
+                            <font-awesome-icon :icon="`fas fa-check`" />
                         </b-button>
                         <b-button variant="info" class="btn-circle">
-                            <font-awesome-icon :icon="`fas fa-info-circle`"/>
+                            <font-awesome-icon :icon="`fas fa-info-circle`" />
                         </b-button>
                         <b-button variant="warning" class="btn-circle">
-                            <font-awesome-icon :icon="`fas fa-exclamation-triangle`"/>
+                            <font-awesome-icon :icon="`fas fa-exclamation-triangle`" />
                         </b-button>
                         <b-button variant="danger" class="btn-circle">
-                            <font-awesome-icon :icon="`fas fa-trash`"/>
+                            <font-awesome-icon :icon="`fas fa-trash`" />
                         </b-button>
                         <!-- Circle Buttons (Small) -->
                         <div class="mt-4 mb-2">
                             <code>.btn-circle .btn-sm</code>
                         </div>
                         <b-button variant="primary" class="btn-circle btn-sm">
-                            <font-awesome-icon :icon="`fa-angle-left`"/>
+                            <font-awesome-icon :icon="`fa-angle-left`" />
                         </b-button>
                         <b-button variant="success" class="btn-circle btn-sm">
-                            <font-awesome-icon :icon="`fas fa-check`"/>
+                            <font-awesome-icon :icon="`fas fa-check`" />
                         </b-button>
                         <b-button variant="info" class="btn-circle btn-sm">
-                            <font-awesome-icon :icon="`fas fa-info-circle`"/>
+                            <font-awesome-icon :icon="`fas fa-info-circle`" />
                         </b-button>
                         <b-button variant="warning" class="btn-circle btn-sm">
-                            <font-awesome-icon :icon="`fas fa-exclamation-triangle`"/>
+                            <font-awesome-icon :icon="`fas fa-exclamation-triangle`" />
                         </b-button>
                         <b-button variant="danger" class="btn-circle btn-sm">
-                            <font-awesome-icon :icon="`fas fa-trash`"/>
+                            <font-awesome-icon :icon="`fas fa-trash`" />
                         </b-button>
                         <!-- Circle Buttons (Large) -->
                         <div class="mt-4 mb-2">
                             <code>.btn-circle .btn-lg</code>
                         </div>
                         <b-button variant="primary" class="btn-circle btn-lg">
-                            <font-awesome-icon :icon="`fa-angle-left`"/>
+                            <font-awesome-icon :icon="`fa-angle-left`" />
                         </b-button>
                         <b-button variant="success" class="btn-circle btn-lg">
-                            <font-awesome-icon :icon="`fas fa-check`"/>
+                            <font-awesome-icon :icon="`fas fa-check`" />
                         </b-button>
                         <b-button variant="info" class="btn-circle btn-lg">
-                            <font-awesome-icon :icon="`fas fa-info-circle`"/>
+                            <font-awesome-icon :icon="`fas fa-info-circle`" />
                         </b-button>
                         <b-button variant="warning" class="btn-circle btn-lg">
-                            <font-awesome-icon :icon="`fas fa-exclamation-triangle`"/>
+                            <font-awesome-icon :icon="`fas fa-exclamation-triangle`" />
                         </b-button>
                         <b-button variant="danger" class="btn-circle btn-lg">
-                            <font-awesome-icon :icon="`fas fa-trash`"/>
+                            <font-awesome-icon :icon="`fas fa-trash`" />
                         </b-button>
                     </div>
                 </div>
@@ -105,49 +105,49 @@
                         </p>
                         <b-button variant="primary">
                             <span class="icon text-white-50">
-                                <font-awesome-icon :icon="`fas fa-flag`"/>
+                                <font-awesome-icon :icon="`fas fa-flag`" />
                             </span>
                             <span class="text">Split Button Primary</span>
                         </b-button>
                         <div class="my-2"></div>
                         <b-button variant="success">
                             <span class="icon text-white-50">
-                                <font-awesome-icon :icon="`fas fa-check`"/>
+                                <font-awesome-icon :icon="`fas fa-check`" />
                             </span>
                             <span class="text">Split Button Success</span>
                         </b-button>
                         <div class="my-2"></div>
                         <b-button variant="info">
                             <span class="icon text-white-50">
-                                <font-awesome-icon :icon="`fas fa-info-circle`"/>
+                                <font-awesome-icon :icon="`fas fa-info-circle`" />
                             </span>
                             <span class="text">Split Button Info</span>
                         </b-button>
                         <div class="my-2"></div>
                         <b-button variant="warning">
                             <span class="icon text-white-50">
-                                <font-awesome-icon :icon="`fas fa-exclamation-triangle`"/>
+                                <font-awesome-icon :icon="`fas fa-exclamation-triangle`" />
                             </span>
                             <span class="text">Split Button Warning</span>
                         </b-button>
                         <div class="my-2"></div>
                         <b-button variant="danger">
                             <span class="icon text-white-50">
-                                <font-awesome-icon :icon="`fas fa-trash`"/>
+                                <font-awesome-icon :icon="`fas fa-trash`" />
                             </span>
                             <span class="text">Split Button Danger</span>
                         </b-button>
                         <div class="my-2"></div>
                         <b-button variant="secondary">
                             <span class="icon text-white-50">
-                                <font-awesome-icon :icon="`fas fa-arrow-right`"/>
+                                <font-awesome-icon :icon="`fas fa-arrow-right`" />
                             </span>
                             <span class="text">Split Button Secondary</span>
                         </b-button>
                         <div class="my-2"></div>
                         <b-button variant="light">
                             <span class="icon text-gray-600">
-                                <font-awesome-icon :icon="`fas fa-arrow-right`"/>
+                                <font-awesome-icon :icon="`fas fa-arrow-right`" />
                             </span>
                             <span class="text">Split Button Light</span>
                         </b-button>
@@ -155,14 +155,14 @@
                         <p>Also works with small and large button classes!</p>
                         <b-button variant="primary" class="btn-icon-split btn-sm">
                             <span class="icon text-white-50">
-                                <font-awesome-icon :icon="`fas fa-flag`"/>
+                                <font-awesome-icon :icon="`fas fa-flag`" />
                             </span>
                             <span class="text">Split Button Small</span>
                         </b-button>
                         <div class="my-2"></div>
                         <b-button variant="primary" class="btn-icon-split btn-lg">
                             <span class="icon text-white-50">
-                                <font-awesome-icon :icon="`fas fa-flag`"/>
+                                <font-awesome-icon :icon="`fas fa-flag`" />
                             </span>
                             <span class="text">Split Button Large</span>
                         </b-button>
@@ -174,7 +174,7 @@
         </div>
     </div>
 </template>
-  
+
 <script lang="ts">
 
 export default {
@@ -183,4 +183,3 @@ export default {
     components: {}
 }
 </script>
-  

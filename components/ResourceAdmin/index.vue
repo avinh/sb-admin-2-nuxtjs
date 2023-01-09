@@ -30,7 +30,8 @@
                     </b-row>
                 </div>
                 <div v-if="target === 'create'">
-                    <ResourceCreate :fields="create" :source="source" :onTarget="(target)=>{this.target = target}"/>
+                    <ResourceAdminCreate :fields="create" :source="source"
+                        :onTarget="(target) => { this.target = target }" />
                 </div>
             </b-card-body>
         </b-card>
@@ -39,7 +40,7 @@
 
 <script>
 export default {
-    name: "Resource",
+    name: "ResourceAdmin",
     props: ['fields', 'perPage', 'source', 'create'],
     data() {
         return {
@@ -78,7 +79,7 @@ export default {
     mounted() {
         if (this.$route.fullPath.includes('#create')) {
             this.target = 'create';
-        }else{
+        } else {
             this.target = 'index';
         }
         this.getData();

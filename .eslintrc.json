@@ -1,0 +1,28 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:vue/essential",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "overrides": [],
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+        "parser": {
+            "ts": "@typescript-eslint/parser",
+            "<template>": "espree"
+        },
+        "ecmaVersion": "latest"
+    },
+    "plugins": [
+        "vue",
+        "@typescript-eslint",
+        "jest"
+    ],
+    "rules": {}
+}

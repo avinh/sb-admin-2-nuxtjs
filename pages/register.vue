@@ -29,10 +29,11 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password" v-model="repeatPassword">
+                                            id="exampleRepeatPassword" placeholder="Repeat Password"
+                                            v-model="repeatPassword">
                                     </div>
                                 </div>
-                                <button href="login" class="btn btn-primary btn-user btn-block"  @click="register">
+                                <button href="login" class="btn btn-primary btn-user btn-block" @click="register">
                                     Register Account
                                 </button>
                                 <hr>
@@ -58,7 +59,7 @@
 
     </div>
 </template>
-  
+
 <script lang="ts">
 import Vue from 'vue'
 
@@ -91,11 +92,10 @@ export default Vue.extend({
                     },
                 })
                 this.$router.push('/')
-            } catch (e:any) {
+            } catch (e: any) {
                 this.error = e.response.data.message
             }
         }
     }
 })
 </script>
-  

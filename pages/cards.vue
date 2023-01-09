@@ -200,6 +200,7 @@
 
 <script>
 export default {
+    name: "CardsPage",
     middleware: 'auth',
 }
 </script>

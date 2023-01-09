@@ -13,7 +13,8 @@
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
 
-        <li class="nav-item" :class="isRouteActive(itemMenu) ? 'active' : ''" v-for="itemMenu in menuList">
+        <li class="nav-item" v-bind:key="itemMenu.id" :class="isRouteActive(itemMenu) ? 'active' : ''"
+            v-for="itemMenu in menuList">
 
             <NuxtLink block v-b-toggle="`collapse-${itemMenu.id}`" :data-toggle="itemMenu.sub ? 'collapse' : ''"
                 variant="primary" class="nav-link" v-if="itemMenu.name" :to="itemMenu.link ?? '#'">
@@ -26,11 +27,13 @@
             <b-collapse v-if="itemMenu.sub" :id="`collapse-${itemMenu.id}`" :visible="isRouteActive(itemMenu)"
                 class="mt-2" accordion="menu-accordion">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <div v-for="itemMenuSub in itemMenu.sub">
+                    <div v-bind:key="itemMenuSub.id" v-for="itemMenuSub in itemMenu.sub">
                         <h6 class="collapse-header" v-if="itemMenuSub.name">{{ itemMenuSub.name }}</h6>
                         <a class="collapse-item" :href="itemMenuSubItem.link"
                             :class="isRouteActive(itemMenuSubItem) ? 'active' : ''"
-                            v-for="itemMenuSubItem in itemMenuSub.items">{{ itemMenuSubItem.name }}</a>
+                            v-for="itemMenuSubItem in itemMenuSub.items" v-bind:key="itemMenuSubItem.id">{{
+                                itemMenuSubItem.name
+                            }}</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -46,7 +49,7 @@
         </div> -->
         <div class="text-center d-none d-md-inline">
             <b-button variant="primary" class="rounded-circle border-0" id="sidebarToggle" @click="onClickSidebar">
-                <font-awesome-icon :icon="`fas ${sidebarToggleTop ? 'fa-angle-left': 'fa-angle-right'}`" />
+                <font-awesome-icon :icon="`fas ${sidebarToggleTop ? 'fa-angle-left' : 'fa-angle-right'}`" />
             </b-button>
         </div>
 
@@ -107,11 +110,10 @@ export default {
             if (windowWidth < 768) {
                 this.setSidebarToggleTop(false);
             }
-            ;
+
             if (windowWidth < 480 && !this.sidebarToggleTop) {
                 this.setSidebarToggleTop(false);
             }
-            ;
         }
     },
     components: { BDivider }

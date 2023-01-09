@@ -1,5 +1,5 @@
 <template>
-    <div >
+    <div>
         <b-card>
             <b-card-body>
 
@@ -58,6 +58,7 @@
 
 <script>
 export default {
+    name: "TablePage",
     data() {
         return {
             fields: ['first_name', 'last_name', 'age'],

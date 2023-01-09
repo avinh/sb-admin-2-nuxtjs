@@ -2,12 +2,13 @@
     <div id="wrapper">
         <Nuxt />
     </div>
-  </template>
-  <script>
+</template>
+<script>
+export default {
+    name: "EmptyPage"
+}
+</script>
 
-  </script>
-  
-  <style>
-  
-  </style>
-  
+<style>
+
+</style>

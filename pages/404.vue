@@ -8,9 +8,10 @@
 </template>
 
 <script>
-    export default {
-        middleware: 'auth',
-    }
+export default {
+    name: "404Page",
+    middleware: 'auth',
+}
 </script>
 
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-button :class="$props.childClass" v-bind="$props" :disabled="loading == true || $props.disabled">
-            <font-awesome-icon icon="fa fa-spinner" spin v-if="loading == true"/>
+            <font-awesome-icon icon="fa fa-spinner" spin v-if="loading == true" />
             <slot></slot>
         </b-button>
     </div>

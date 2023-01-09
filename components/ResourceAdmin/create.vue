@@ -23,15 +23,13 @@
 
 <script>
 export default {
-    name: "ResourceCreate",
+    name: "ResourceAdminCreate",
     props: ['fields', 'source', 'onTarget'],
     data() {
         return {
             selected: null,
             dataFields: {}
         }
-    },
-    mounted() {
     },
     methods: {
         async onChange(val, field) {
@@ -40,12 +38,9 @@ export default {
         async onCreate() {
             await this.$repositories(this.source).create(this.dataFields);
             this.$bvModal.msgBoxOk('Successfully created !!')
-                .then(async (value) => {
+                .then(async () => {
                     this.$router.push({ path: this.$route.path });
                     this.onTarget('index');
-                })
-                .catch(err => {
-                    // An error occurred
                 })
 
         }

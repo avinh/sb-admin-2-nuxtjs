@@ -8,18 +8,18 @@
           <Nuxt />
         </div>
       </div>
-      <TheFooter />
+      <LayoutFooter />
     </div>
   </div>
 </template>
 <script>
 
 import SideBar from './SideBar.vue';
-import TheFooter from './Footer.vue';
+import LayoutFooter from './Footer.vue';
 import TopBar from './TopBar.vue';
 export default {
   name: "DefaultLayout",
-  components: { SideBar, TheFooter, TopBar }
+  components: { SideBar, LayoutFooter, TopBar }
 }
 </script>
 

@@ -6,17 +6,14 @@
         <b-button variant="primary" href="#">More Info</b-button>
       </b-jumbotron>
     </div>
-
   </div>
 </template>
 
 <script lang="ts">
-import BButtonLoading from '~/components/BButtonLoading.vue';
 
 
 export default {
   name: "IndexPage",
   middleware: 'auth',
-  components: { BButtonLoading }
 }
 </script>

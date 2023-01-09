@@ -1,12 +1,13 @@
 <template>
     <div>
-        <Resource :fields="['id', 'name', 'email', 'website']" perPage="5" source="user" :create="create" />
+        <ResourceAdmin :fields="['id', 'name', 'email', 'website']" perPage="5" source="user" :create="create" />
     </div>
 </template>
 
 <script>
 
 export default {
+    name: "UserPage",
     data() {
         return {
             create: [

@@ -4,10 +4,10 @@
     </div>
 </template>
 
-<script>
-    export default {
-        name:"ResourceEdit"
-    }
+<script lang="ts">
+export default {
+    name: "ResourceEdit"
+}
 </script>
 
 <style lang="scss" scoped>
