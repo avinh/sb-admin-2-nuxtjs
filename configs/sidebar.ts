@@ -22,11 +22,6 @@ export const sidebarConfig: ISidebarConfig[] = [
             id: "list",
             name: "List",
             link: "/resource/user"
-          },
-          {
-            id: "create",
-            name: "Create",
-            link: "/resource/user#create"
           }
         ]
       }

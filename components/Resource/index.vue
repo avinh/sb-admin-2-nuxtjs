@@ -30,7 +30,7 @@
                     </b-row>
                 </div>
                 <div v-if="target === 'create'">
-                    <ResourceCreate :fields="create" :source="source"/>
+                    <ResourceCreate :fields="create" :source="source" :onTarget="(target)=>{this.target = target}"/>
                 </div>
             </b-card-body>
         </b-card>
@@ -48,7 +48,7 @@ export default {
             currentPage: 1,
             perPageLocal: this.$props.perPage ?? 10,
             totalRows: 0,
-            target: "index"
+            target: null
         }
     },
     methods: {
@@ -76,7 +76,12 @@ export default {
         }
     },
     mounted() {
-        this.getData()
+        if (this.$route.fullPath.includes('#create')) {
+            this.target = 'create';
+        }else{
+            this.target = 'index';
+        }
+        this.getData();
     }
 }
 </script>
