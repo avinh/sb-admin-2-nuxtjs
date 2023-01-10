@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <b-form @submit="onSubmit">
             <b-card>
                 <b-card-body>
@@ -27,8 +26,8 @@
                                 :required="field.required"></b-form-datepicker>
                         </b-col>
                         <b-col sm="9" v-else-if="field.tag == 'timepicker'">
-                            <b-form-datepicker :id="field.name" v-model="form[field.name]" class="mb-2"
-                                :required="field.required"></b-form-datepicker>
+                            <b-form-timepicker :id="field.name" v-model="form[field.name]" class="mb-2"
+                                :required="field.required"></b-form-timepicker>
                         </b-col>
                         <b-col sm="9" v-else-if="field.tag == 'spinbutton'">
                             <b-form-spinbutton :id="field.name" v-model="form[field.name]" :min="field.min ?? 1"
@@ -42,9 +41,13 @@
                         <b-col sm="9" v-else-if="field.tag == 'image'">
                             <b-img center :src="field.src" :alt="field.alt"></b-img>
                         </b-col>
+                        <b-col sm="9" v-else-if="field.tag == 'radio'">
+                            <b-form-radio-group class="mb-3" v-model="form[field.name]" :label="field.label"
+                                :options="field.options" :required="field.required">
+                            </b-form-radio-group>
+                        </b-col>
                     </b-row>
                 </b-card-body>
-
                 <template #footer>
                     <div class="d-flex justify-content-between">
                         <b-button variant="primary" type="submit">

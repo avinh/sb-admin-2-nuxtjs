@@ -1,41 +1,51 @@
 <template>
     <div v-if="target">
         <div v-if="target === 'index'">
-            <b-card>
-                <b-card-body>
-                    <b-row>
-                        <b-col class="d-flex justify-content-end">
-                            <b-button variant="primary" @click="onCreate">
-                                <span class="icon text-white-50">
-                                    <font-awesome-icon :icon="`fa fa-plus`" />
-                                </span>
-                                <span class="text">Create</span>
-                            </b-button>
-                        </b-col>
-                    </b-row>
+            <b-row>
+                <b-col v-bind="index.col">
+                    <b-card>
+                        <b-card-body>
+                            <b-row>
+                                <b-col class="d-flex justify-content-end">
+                                    <b-button variant="primary" @click="onCreate">
+                                        <span class="icon text-white-50">
+                                            <font-awesome-icon :icon="`fa fa - plus`" />
+                                        </span>
+                                        <span class="text">Create</span>
+                                    </b-button>
+                                </b-col>
+                            </b-row>
 
-                    <b-table :items="items" responsive v-bind="$props" class="mt-2" selectable :select-mode="'single'"
-                        @row-selected="onRowSelected">
-                        <template #table-busy>
-                            <div class="text-center text-danger my-2">
-                                <b-spinner class="align-middle"></b-spinner>
-                                <strong>Loading...</strong>
-                            </div>
-                        </template>
-                    </b-table>
-                    <b-row>
-                        <b-col class="d-flex justify-content-end">
-                            <b-pagination @change="onPageChanged" :total-rows="totalRows" :per-page="perPageLocal"
-                                v-model="currentPage" class="my-0" />
-                        </b-col>
-                    </b-row>
-                </b-card-body>
-            </b-card>
+                            <b-table :hover="true" :items="items" :fields="index.fields" responsive class="mt-2"
+                                selectable :select-mode="'single'" @row-selected="onRowSelected">
+                                <template #table-busy>
+                                    <div class="text-center text-danger my-2">
+                                        <b-spinner class="align-middle"></b-spinner>
+                                        <strong>Loading...</strong>
+                                    </div>
+                                </template>
+                            </b-table>
+                            <b-row>
+                                <b-col class="d-flex justify-content-end">
+                                    <b-pagination @change="onPageChanged" :total-rows="totalRows"
+                                        :per-page="perPageLocal" v-model="currentPage" class="my-0" />
+                                </b-col>
+                            </b-row>
+                        </b-card-body>
+                    </b-card>
+                </b-col>
+            </b-row>
+
 
         </div>
         <div v-if="target !== 'index'">
-            <ResourceAdminForm :fields="create" :source="source" :target="target"
-                :onTarget="(target) => { this.target = target }" :onDelete="onDelete" />
+            <b-row>
+                <b-col v-bind="this.target == 'create' ? create.col : edit.col">
+                    <ResourceAdminForm :fields="formFields" :source="source" :target="target"
+                        :onTarget="(target) => { this.target = target }" :onDelete="onDelete" />
+                </b-col>
+            </b-row>
+
         </div>
     </div>
 </template>
@@ -43,7 +53,7 @@
 <script>
 export default {
     name: "ResourceAdmin",
-    props: ['fields', 'perPage', 'source', 'create'],
+    props: ['index', 'perPage', 'source', 'create', 'edit'],
     data() {
         return {
             items: null,
@@ -51,20 +61,13 @@ export default {
             currentPage: 1,
             perPageLocal: this.$props.perPage ?? 10,
             totalRows: 0,
-            target: null
+            target: null,
+            formFields: null
         }
     },
     watch: {
-        $route(to) {
-            if (to.fullPath.includes('#create')) {
-                this.target = 'create';
-            }
-            else if (to.fullPath.includes('#')) {
-                this.target = 'edit';
-            }
-            else {
-                this.target = 'index';
-            }
+        $route() {
+            this.onInit()
         }
     },
     methods: {
@@ -97,19 +100,24 @@ export default {
         onDelete(id) {
             const foundIndex = this.items.findIndex((item) => item.id == id);
             this.items.splice(foundIndex, 1)
+        },
+        onInit() {
+            if (this.$route.fullPath.includes('#create')) {
+                this.target = 'create';
+                this.formFields = this.create.fields
+            }
+            else if (this.$route.fullPath.includes('#')) {
+                this.target = 'edit';
+                this.formFields = this.edit.fields
+            }
+            else {
+                this.target = 'index';
+            }
+            this.getData();
         }
     },
     mounted() {
-        if (this.$route.fullPath.includes('#create')) {
-            this.target = 'create';
-        }
-        else if (this.$route.fullPath.includes('#')) {
-            this.target = 'edit';
-        }
-        else {
-            this.target = 'index';
-        }
-        this.getData();
+        this.onInit()
     }
 }
 </script>
