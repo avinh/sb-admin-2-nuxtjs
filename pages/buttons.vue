@@ -85,9 +85,14 @@
                         <h6 class="m-0 font-weight-bold text-primary">Loading Buttons</h6>
                     </div>
                     <div class="card-body">
-                        <b-button-loading variant="primary" :loading="true">
+                        <b-button variant="primary" disabled>
+                            <b-spinner small></b-spinner>
+                            <span class="sr-only">Loading...</span>
+                        </b-button>
+                        <b-button variant="primary" disabled>
+                            <b-spinner small type="grow"></b-spinner>
                             Loading...
-                        </b-button-loading>
+                        </b-button>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@
                 <span>{{ itemMenu.name }}</span>
             </NuxtLink>
 
-            <BDivider v-if="itemMenu.id === 'divider'" childClass="sidebar-divider" />
+            <hr v-if="itemMenu.id === 'divider'" class="sidebar-divider d-none d-md-block">
 
             <b-collapse v-if="itemMenu.sub" :id="`collapse-${itemMenu.id}`" :visible="isRouteActive(itemMenu)"
                 class="mt-2" accordion="menu-accordion">
@@ -41,7 +41,7 @@
         </li>
 
         <!-- Divider -->
-        <BDivider childClass="sidebar-divider" />
+        <hr class="sidebar-divider d-none d-md-block">
 
         <!-- Sidebar Toggler (Sidebar) -->
         <!-- <div class="text-center d-none d-md-inline">
@@ -59,7 +59,6 @@
 <script>
 import { mapState, mapMutations } from 'vuex';
 
-import BDivider from '~/components/BDivider.vue';
 import { sidebarConfig } from '~/configs/sidebar';
 
 export default {
@@ -115,8 +114,7 @@ export default {
                 this.setSidebarToggleTop(false);
             }
         }
-    },
-    components: { BDivider }
+    }
 }
 </script>
 

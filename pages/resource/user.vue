@@ -13,7 +13,7 @@ export default {
         return {
             create: [
                 {
-                    name: 'username', title: "User name", type: "text", tag: 'input', required: false
+                    name: 'name', title: "Name", type: "text", tag: 'input', required: false
                 },
                 {
                     name: 'age', title: "Age", type: "number", tag: 'input', required: false
@@ -25,7 +25,7 @@ export default {
                     name: 'birthday', title: "Birthday", type: "datetime-local", tag: 'input', required: false
                 },
                 {
-                    name: 'textarea', title: "Textarea", tag: 'textarea', rows: 3, maxRows: 6, required: false
+                    name: 'bio', title: "Bio", tag: 'textarea', rows: 3, maxRows: 6, required: false
                 },
                 {
                     name: 'datepicker', title: "Datepicker", tag: 'datepicker', required: false
@@ -54,7 +54,7 @@ export default {
             ],
             edit: [
                 {
-                    name: 'username', title: "User name", type: "text", tag: 'input', required: false
+                    name: 'name', title: "Name", type: "text", tag: 'input', required: false
                 },
                 {
                     name: 'age', title: "Age", type: "number", tag: 'input', required: false
@@ -66,7 +66,7 @@ export default {
                     name: 'birthday', title: "Birthday", type: "datetime-local", tag: 'input', required: false
                 },
                 {
-                    name: 'textarea', title: "Textarea", tag: 'textarea', rows: 3, maxRows: 6, required: false
+                    name: 'bio', title: "Bio", tag: 'textarea', rows: 3, maxRows: 6, required: false
                 },
                 {
                     name: 'datepicker', title: "Datepicker", tag: 'datepicker', required: false

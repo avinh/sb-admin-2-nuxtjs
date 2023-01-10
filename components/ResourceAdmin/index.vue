@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <b-card>
-            <b-card-body>
-                <div v-if="target === 'index'">
+    <div v-if="target">
+        <div v-if="target === 'index'">
+            <b-card>
+                <b-card-body>
                     <b-row>
                         <b-col class="d-flex justify-content-end">
                             <b-button variant="primary" @click="onCreate">
@@ -29,13 +29,14 @@
                                 v-model="currentPage" class="my-0" />
                         </b-col>
                     </b-row>
-                </div>
-                <div v-if="target !== 'index'">
-                    <ResourceAdminForm :fields="create" :source="source" :target="target"
-                        :onTarget="(target) => { this.target = target }" />
-                </div>
-            </b-card-body>
-        </b-card>
+                </b-card-body>
+            </b-card>
+
+        </div>
+        <div v-if="target !== 'index'">
+            <ResourceAdminForm :fields="create" :source="source" :target="target"
+                :onTarget="(target) => { this.target = target }" :onDelete="onDelete" />
+        </div>
     </div>
 </template>
 
@@ -51,6 +52,19 @@ export default {
             perPageLocal: this.$props.perPage ?? 10,
             totalRows: 0,
             target: null
+        }
+    },
+    watch: {
+        $route(to) {
+            if (to.fullPath.includes('#create')) {
+                this.target = 'create';
+            }
+            else if (to.fullPath.includes('#')) {
+                this.target = 'edit';
+            }
+            else {
+                this.target = 'index';
+            }
         }
     },
     methods: {
@@ -80,6 +94,10 @@ export default {
             this.$router.push({ path: this.$route.path + "#" + items[0].id })
             this.target = 'edit';
         },
+        onDelete(id) {
+            const foundIndex = this.items.findIndex((item) => item.id == id);
+            this.items.splice(foundIndex, 1)
+        }
     },
     mounted() {
         if (this.$route.fullPath.includes('#create')) {

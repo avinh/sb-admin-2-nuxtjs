@@ -33,9 +33,13 @@
                                                         Me</label>
                                                 </div>
                                             </div>
-                                            <!-- <b-button disabled class="btn-user" variant="primary" loading block>Login</b-button> -->
-                                            <BButtonLoading childClass="btn-user" variant="primary" block type="submit"
-                                                :loading="isLoging">Login</BButtonLoading>
+
+                                            <b-button class="btn-user" variant="primary" type="submit"
+                                                :disabled="isLoging" block>
+                                                <b-spinner small v-if="isLoging"></b-spinner>
+                                                Login
+                                            </b-button>
+
                                             <hr>
                                             <a href="/" class="btn btn-google btn-user btn-block">
                                                 <i class="fab fa-google fa-fw"></i> Login with Google
@@ -64,7 +68,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import BButtonLoading from '~/components/BButtonLoading.vue';
 export default Vue.extend({
     name: "LoginPage",
     layout: "empty",
@@ -91,7 +94,6 @@ export default Vue.extend({
                 // this.error = e.response.data.message
             }
         }
-    },
-    components: { BButtonLoading }
+    }
 })
 </script>
