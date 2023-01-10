@@ -9,6 +9,7 @@
 
 export default {
     name: "UserPage",
+    middleware: 'auth',
     data() {
         return {
             create: [

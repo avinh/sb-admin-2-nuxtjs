@@ -79,13 +79,11 @@ export default {
         }
     },
     mounted() {
-        if (this.target === "edit") {
-            const id = this.$route.fullPath.split('#')[1];
-            this.$repositories(this.source).show(id).then((res) => {
-                this.form = res;
-            }).catch((err) => {
-                console.log(err)
-            });
+        this.loadData();
+    },
+    watch: {
+        $route() {
+            this.loadData();
         }
     },
     computed: {
@@ -138,6 +136,15 @@ export default {
                         this.onTarget('index');
                         this.onDelete(this.getID)
                     })
+            }
+        },
+        async loadData() {
+            if (this.target === "edit" && this.getID) {
+                this.$repositories(this.source).show(this.getID).then((res) => {
+                    this.form = res;
+                }).catch((err) => {
+                    console.log(err)
+                });
             }
         }
     }
