@@ -14,9 +14,9 @@
 </template>
 <script>
 
-import SideBar from './SideBar.vue';
-import LayoutFooter from './Footer.vue';
-import TopBar from './TopBar.vue';
+import SideBar from '../components/SideBar.vue';
+import LayoutFooter from '../components/Footer.vue';
+import TopBar from '../components/TopBar.vue';
 export default {
   name: "DefaultLayout",
   components: { SideBar, LayoutFooter, TopBar }
